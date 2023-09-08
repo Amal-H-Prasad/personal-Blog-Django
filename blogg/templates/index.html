@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ posts.title }}</title>
+</head>
+<body>
+	<div class="jumbotron">
+	<h1>Welcome To My  Blog</h1>
+
+	<ul>
+	</hr>
+	</br>
+	<p>Recent Created Posts..!</p>
+	{% for post in posts %}
+		<li>
+		<a href="/detail/{{post.id}}"> {{post.title}} </a><br/>
+		{{ post.body }}
+		</li>
+	{% endfor %}
+	</ul>
+	</div>
+</body>
+</html>
+{% endblock %}

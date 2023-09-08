@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<html>
+<head>
+	<title>{{ title }}</title>
+	<style>
+		/* Styling for text box */
+input[type="text"] {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: #555;
+    width:80%;
+  padding: 10px;
+}
+
+/* Styling for text area */
+textarea {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: #555;
+  padding: 10px;
+  width:80%;
+}
+
+	</style>
+</head>
+<body>
+<div class="jumbotron">
+	<form action="" method="POST">{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Post" class="btn btn-dark">
+	</form>
+</div>
+</body>
+</html>
+{% endblock %}
